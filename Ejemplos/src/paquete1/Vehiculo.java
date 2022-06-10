@@ -42,7 +42,7 @@ public class Vehiculo {
         return valor;
     }
 public String toString() {
-        String reporte = String.format("%s %s %.2f", obtenerTipo(), obtenerMatricula(), obtenerValor());
+        String reporte = String.format("%s%s%.2f", obtenerTipo(), obtenerMatricula(), obtenerValor());
         return reporte;
     }
 }

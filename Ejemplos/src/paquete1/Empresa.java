@@ -29,19 +29,20 @@ public class Empresa {
     public void establecerVehiculos(Vehiculo[] m) {
         vehiculos = m;
     }
-    
+
     public void establecerCostoVehiculos() {
         double sumaV = 0;
         for (int i = 0; i < obtenerVehiculos().length; i++) {
             sumaV = sumaV + obtenerVehiculos()[i].obtenerValor();
 
         }
-        costoVehiculos=sumaV;
+        costoVehiculos = sumaV;
 
     }
-    public void establecerCostoTotalBienes(){
-        costoTotalBienes= costoBienesInmuebles+ costoVehiculos;
-        
+
+    public void establecerCostoTotalBienes() {
+        costoTotalBienes = costoBienesInmuebles + costoVehiculos;
+
     }
 
     public void establecerCostosBienesInmuebles() {
@@ -68,10 +69,12 @@ public class Empresa {
     public double obtenerCostosBienesInmuebles() {
         return costoBienesInmuebles;
     }
-    public double obtenerCostoVehiculos(){
+
+    public double obtenerCostoVehiculos() {
         return costoVehiculos;
     }
-    public double obtenerCostoTotalBienes(){
+
+    public double obtenerCostoTotalBienes() {
         return costoTotalBienes;
     }
 
@@ -85,10 +88,15 @@ public class Empresa {
         }
         reporte = String.format("%s Total de inmuebles: %.1f\n", reporte, obtenerCostosBienesInmuebles());
         reporte = String.format("%s Lista de Autos\n", reporte);
-        for (int i = 0; i < obtenerVehiculos().length; i++) {
-            reporte= String.format();
-            
+        for (int i = 0; i < vehiculos.length; i++) {
+            reporte = String.format("%s%d. %s,%s (%.1f)\n", reporte, i + 1,
+                    obtenerVehiculos()[i].obtenerTipo(),
+                    obtenerVehiculos()[i].obtenerMatricula(),
+                    obtenerVehiculos()[i].obtenerValor());
+
         }
+        reporte= String.format("%s Total de inmuebles: %.1f\n",reporte, obtenerCostoVehiculos());
+        reporte= String.format("%s Total de Bienes: %.1f\n", reporte, obtenerCostoTotalBienes());
         return reporte;
     }
 

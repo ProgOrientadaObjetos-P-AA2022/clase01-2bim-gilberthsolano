@@ -50,6 +50,13 @@ public class Ejecutor {
         
         Vehiculo ve1= new Vehiculo("Camioneta", "LBC0055", 10000);
         Vehiculo ve2= new Vehiculo("Autos", "LVB0044", 20000);
+        Vehiculo ve3= new Vehiculo("Autos", "LBR3300", 23000);
+        Vehiculo ve4= new Vehiculo("Camioneta", "LTT4455", 15000);
+        Vehiculo ve5 = new Vehiculo("Auto", "LBB0099", 20000);
+        Vehiculo[] vehiculos= {ve1, ve2, ve3,ve4, ve5};
+        miempresa.establecerVehiculos(vehiculos);
+        miempresa.establecerCostoVehiculos();
+        miempresa.establecerCostoTotalBienes();
         
         
 //        System.out.printf("%.2f\n", miempresa.obtenerCostosBienesInmuebles());
